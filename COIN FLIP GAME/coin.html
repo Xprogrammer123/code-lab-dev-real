@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coin fip game</title>
+</head>
+<body>
+   <button class="flip">show score</button>
+
+    <div class="result" style="border: 1px solid black; width: 200px; height:50px;"></div>
+
+<button onclick="
+  let randomNumber = Math.random()  ;
+  console.log(randomNumber)
+ let computerMove = ''
+
+ if (randomNumber>0 && randomNumber <= 0.5) {
+computerMove = 'Heads'
+ }
+ else if (randomNumber > 0.5 && randomNumber <= 1 ) {
+    computerMove = 'Tails'
+ }
+    
+ document.querySelector('.flip').innerHTML = `${computerMove}`
+
+
+let result = ''
+if (computerMove === 'Heads') {
+    score.heads+=1
+}
+else if (computerMove === 'Tails') {
+    score.tails+=1
+}
+
+localStorage.setItem('score', JSON.stringify(score) );
+console.log(result);
+
+document.querySelector('.result').innerHTML = `Heads ${score.heads} Tails ${score.tails}`
+
+
+
+    ">Flip The Coin</button>
+
+<button onclick="
+score.heads = 0;
+score.tails = 0;
+localStorage.removeItem('score');
+">Reset score</button>
+
+
+
+
+<script>
+let score = JSON.parse(localStorage.getItem('score')) || {
+    heads:0,
+    tails:0
+};
+
+/*
+if(!score){
+score = {
+    heads:0,
+    tails:0
+};
+}
+*/
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

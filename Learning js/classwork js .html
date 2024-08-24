@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class work js</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <button>click</button><br><br>
+
+    <button>fawas</button> <button>bread</button>
+    
+    <p>Hello, world!</p>
+    
+
+    
+    <br><br>
+    
+    
+    
+    <style>
+      .addtocart{
+        background-color: yellow;
+      }
+      .Buynow{
+        background-color: orange;
+      }
+      .display{
+        display: none;
+      }
+    </style>
+
+
+
+<p>Adult pin Cotton shirt</p>
+<p>price: $7.99</p>
+<p id="show"></p>
+<button class="addtocart" onclick="show('Added')">Add To Cart</button>
+    
+    <button class="Buynow" onclick="alert('purchased') , console.log('loading...')">Buy now</button>
+
+    
+
+
+
+
+<script>
+function show() {
+document.getElementById ('show') .innerHTML = 'Added'
+}
+  
+</script>
+
+
+
+<h1>variable</h1>
+
+<!--
+      <script>
+        let variable1 = 3;
+        console.log(variable1);
+
+
+        let calculation = 2 + 2;
+        console.log(calculation);
+        console.log(calculation + 2);
+
+        let result = calculation + 2;
+        console.log(result);
+
+        let message = 'hello';
+        console.log(message);
+
+        console.log(';');
+
+
+        variable1 = 5;
+        console.log(variable1);
+
+        variable1 = variable1 + 1;
+        console.log(variable1);
+    </script>
+  -->
+
+
+
+
+<h1>cart quantity</h1>
+
+    <button onclick="
+    console.log('your quantity')
+    console.log(`cartQuantity: ${cartQuantity}`);
+    ">show quantity</button>
+
+    <button onclick="
+    cartQuantity += 1;
+    console.log(`cartQuantity: ${cartQuantity}`);"
+    >Add to cart</button>
+
+    <button onclick=" 
+      cartQuantity2 = 50;
+    cartQuantity += 2
+    console.log(`cartQuantity: ${cartQuantity}`);
+    ">+2</button>
+
+    <button onclick="
+  cartQuantity2 = 50;
+
+    cartQuantity += 3
+    console.log(`cartQuantity: ${cartQuantity}`);
+    if (cartQuantity2 <= cartQuantity ) {
+     alert(' cart is full')
+    }
+    ">+3</button>
+
+    <button onclick="
+    cartQuantity = 0;
+    console.log('cart was reset');
+    console.log(`cartQuantity: ${cartQuantity}`);
+    ">Reset cart</button>
+  
+
+
+  <button onclick=" 
+  cartQuantity1 = 1
+    cartQuantity -= 2
+    console.log(`cartQuantity: ${cartQuantity}`);
+
+    if (cartQuantity1 >= cartQuantity ) {
+   alert('not enough items in cart')
+    }
+    ">-2</button>
+
+
+
+
+
+
+
+
+<script>
+ 
+ let cartQuantity = 0;
+
+   //exercise 6a;
+
+let hour = ('datetime-local');
+
+if (hour >= 6 && hour <= 12 ) {
+console.log('morning');}
+else if ( hour>=12 && hour<=17 ) {
+console.log('afternoon');
+}
+else (hour >= 18 && hour == 24) 
+console.log ('night')
+
+
+//exercise 6b
+let time  = ('datetime-local');
+
+if (time >= 6 && time <= 12 ) {
+console.log('huuhhhnn its morning already ');
+}
+else if ( time>=12 && time<=17 ) {
+console.log('wow this sun is really hot');
+}
+else (time >= 18 && time == 24) 
+console.log ('time to go to bed , see you tomorrow ')
+
+
+//exercise 6c
+
+const name = "fawas"
+let tday = new Date().getHours()
+
+if ( tday <= 12 ) {
+console.log(`good morning ${name}`);
+}
+else if ( tday<=16 ) {
+console.log(`good afternoon ${name}`);
+}
+else if (tday == 24) 
+console.log (`time to go to bed ${name}, see you tomorrow`)
+
+//exercise 6d & exercise 6e
+ const isHoliday = true
+let age = 40
+if ( age <= 6 && isHoliday == true ) {
+console.log('e no deey ')
+}else if ( age <= 6 && isHoliday !== true  ) {
+console.log('discount dey ')
+}else if (age >= 6 && isHoliday == true ) {
+  console.log('no discount for old people and its nit even an holiday yet come on man!!')
+}else if(age >=6 && isHoliday !== true) {
+  console.log ('man you can play but no discount and good for u no holiday ')
+};
+
+
+//exercise 6f & exercise 6g
+const number = Math.random()
+
+if (number < 0.5) {
+console.log ('heads')
+}
+else {
+  console.log('tails')
+}
+
+//exrcise 6h
+let result1 ="you win"
+let result2 ="you lose"
+let guess = '0.6'
+if (number > guess )  {
+  console.log(result1)
+}else{
+  console.log (result2)
+}
+
+//exercise 6j
+
+const result = 0.3 ? 'you win' : 'you lose'
+console.log(
+  result
+);
+
+//exercise 7a & 7b & 7c
+
+function greet(name) {
+console.log(`hello ${name}`);
+}                                       
+
+greet('fawas')
+
+greet() 
+
+
+
+ function convertToFahrenheit(celsius) {
+  let celsius= (fahrenheit - 32) * 5/9;
+
+return fahrenheit
+
+ };
+
+let fahrenheit = 25;
+
+let celsius = convertToFahrenheit(fahrenheitTemp);
+console.log (fahrenheitTemp)
+
+
+//OBJECT
+//exercise 8a
+
+const product = {
+  name: 'basketball',
+  price: 2095 ,
+['delivery-time'] : '3 days'
+}
+console.log(product)
+
+
+//exercise 8b
+
+product.price = 2595;
+console.log(product)
+
+//exercise 8c 
+
+console.log(product['delivery-time']);
+
+
+//exercise 8d
+let product1 = {
+name : 'food ',
+price: 1300
+}
+
+let product2 = {
+  name :'cloth',
+  price: 1100
+}
+
+function comparePrice(product1 , product2) {
+if (product1.price < product2.price) {
+  return product1;
+}
+else {
+return product2;
+}
+};
+
+let cheaper = comparePrice(product1 , product2);
+
+console.log(`cheaper: ${cheaper.name}`)
+
+
+//exercise 8e 
+function compareBoth(product1 , product2) {
+if (product1 === product2){
+  return true
+}
+else {
+  return false
+}
+};
+
+let compareTwo = compareBoth(product1 , product2); 
+console.log(compareTwo)
+
+
+
+
+//exercise 8f 
+
+let str = "HELLO FAWAS"
+
+let lowerCaseStr = str.toLowerCase();
+console.log(lowerCaseStr)
+
+let string = "hello fawas"
+
+let lowerCaseString = string.toUpperCase();
+console.log(lowerCaseString)
+
+
+
+//exercise 8g
+
+let thestr = "fawas"
+let repeatedStr = thestr.repeat(5);
+console.log(repeatedStr);
+
+
+
+
+
+
+
+
+//exercise 9a
+
+console.log(document.querySelector('button'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<button>9a</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

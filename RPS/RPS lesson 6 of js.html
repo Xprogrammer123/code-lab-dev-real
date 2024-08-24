@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R-P-S</title>
+</head>
+<body class="body">
+
+<h1 class="score">SCORE BOARD</h1>
+
+  <button class="p4">Wins Loss Ties</button>
+  <br><br>
+  <button class="p3">Scores</button>
+ 
+  
+<br><br>
+<div class="show">
+  <button class="p1">
+    PLAYER
+  </button>
+<button class="p2">COMPUTER</button>
+</div>
+
+
+<br><br>
+  <!--rock-->
+  <div class="pick">
+
+  <button class="rock"
+    
+        onclick="
+  let randomnumber= Math.random()
+    console.log(randomnumber)  
+    let computermove=''
+if(randomnumber >0 &&randomnumber<=0.3 ){computermove='rock'}
+else if(randomnumber>0.3&&randomnumber<=0.6){computermove='paper'}
+else if(randomnumber>0.6&&randomnumber<=1){computermove='scissors'}
+console.log(computermove)
+
+
+ 
+let result=''
+if(computermove==='rock'){result='Tie'}
+else if (computermove==='paper'){result='you lose'}
+else if (computermove==='scissors'){result='you win'}
+console.log(result)
+
+if(result==='you win'){scores.wins=scores.wins+1}
+ if(result==='you lose'){scores.losses=scores.losses+1}
+ if(result==='tie'){scores.ties=scores.ties+1}
+
+document.querySelector('.p1').innerHTML=` Rock`
+
+document.querySelector('.p2').innerHTML=` computer choose ${computermove}`
+document.querySelector('.p3').innerHTML=` ${result}`
+document.querySelector('.p4').innerHTML=`Wins${scores.wins} Loss${scores.losses} Ties${scores.ties}`
+ 
+      "
+    >rock</button>
+
+<!--paper-->
+
+  <button class="paper"
+    
+    onclick="
+      
+    let randomnumber= Math.random()
+       console.log(randomnumber)  
+       let computermove=''
+   if(randomnumber >0 &&randomnumber<=0.3 ){computermove='rock'}
+   else if(randomnumber>0.3&&randomnumber<=0.6){computermove='paper'}
+   else if(randomnumber>0.6&&randomnumber<=1){computermove='scissors'}
+   console.log(computermove)
+   
+   let result=''
+   if(computermove==='paper'){result='Tie'}
+   else if (computermove==='scissors'){result='you lose'}
+   else if (computermove==='rock'){result='you win'}
+   console.log(result)
+   
+   if(result==='you win'){scores.wins=scores.wins+1}
+   if(result==='you lose'){scores.losses=scores.losses+1}
+   if(result==='tie'){scores.ties=scores.ties+1}
+
+   document.querySelector('.p1').innerHTML=` Paper`
+   
+   document.querySelector('.p2').innerHTML=` computer choose ${computermove}`
+   document.querySelector('.p3').innerHTML=` ${result}`
+   document.querySelector('.p4').innerHTML=`Wins${scores.wins} Loss${scores.losses} Ties${scores.ties}`
+   
+         "
+
+         
+    >paper</button>
+
+<!--scissors -->
+
+  <button class="scissors"
+
+   onclick="
+   let randomnumber=Math.random()
+   console.log(randomnumber)
+   let computermove=''
+
+   if(randomnumber >0 &&randomnumber<=0.3 ){computermove='rock'}
+ else if(randomnumber>0.3&&randomnumber<=0.6){computermove='paper'}
+ else if(randomnumber>0.6&&randomnumber<=1){computermove='scissors'}
+ console.log(computermove)
+ 
+ let result=''
+ if(computermove==='scissors'){result='Tie'}
+  else if (computermove==='paper'){result='you win'} 
+   else if(computermove==='rock'){result='you lose'}
+
+   console.log(result)
+
+   if(result==='you win'){scores.wins=scores.wins+1}
+ if(result==='you lose'){scores.losses=scores.losses+1}
+ if(result==='tie'){scores.ties=scores.ties+1}  
+
+document.querySelector('.p1').innerHTML=`Scissors`
+document.querySelector('.p2').innerHTML=`computer choose ${computermove}`
+ document.querySelector('.p3').innerHTML=`${result}` 
+ document.querySelector('.p4').innerHTML=`Wins${scores.wins} Loss${scores.losses} Ties${scores.ties}`
+     
+   " > scissors</button>
+
+<br><br>
+  </div>
+  
+<button onclick="document.querySelector('.p4').innerHTML=`Wins${scores.wins=0}   Loss${scores.losses=0} Ties${scores.ties=0}`" class="reset">Reset Score</button>
+
+<script src="../RPS/RPS lesson 6 of js.js"></script>
+
+<link rel="stylesheet" href="../RPS/RPS lesson ;6 of js.css">
+
+
+
+
+</style>
+
+
+
+
+</body>
+</html>

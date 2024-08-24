@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+ <!--<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .output-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="output-container">
+    <p>Input 1: <span id="output1"></span></p>
+    <p>Input 2: <span id="output2"></span></p>
+  </div>
+
+  <script>
+function displayInput2() {
+      const input2Value = document.getElementById('input2').value;
+      document.getElementById('output2').textContent = input2Value;
+    
+    // Attach the displayInput2 function to the input event of input2
+    document.getElementById('input2')
+}
+const urlParams = new
+URLSearchParams(window.location.search);
+    const input1Value =  urlParams.get('input1');
+    const input2Value =  urlParams.get('input2');
+
+    document.getElementById('output1').textContent = input1Value;
+    document.getElementById('output2').textContent = input2Value;
+
+</script>
+
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Button Generator</title>
+    <style>
+        #chatContainer {
+            display: none;
+            max-width: 600px;
+            margin: auto;
+      
+        }
+
+        #chatMessages {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+        }
+
+        #messageInput {
+            width: 70%;
+            padding: 5px;
+        }
+
+        #sendButton {
+            width: 20%;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        #emojiPicker {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<label for="chatName">Enter Chat Name:</label>
+<input type="text" id="chatName" placeholder="Type chat name here">
+<button onclick="generateChatButton()">Create Chat Button</button>
+
+<div id="chatContainer">
+    <div id="chatMessages"></div>
+    <input type="text" id="messageInput" placeholder="Type your message...">
+    <button id="sendButton" onclick="sendMessage()">Send</button>
+    <button id="emojiButton" onclick="toggleEmojiPicker()">😊</button>
+    <div id="emojiPicker">
+        
+    </div>
+</div>
+
+<script>
+    function generateChatButton() {
+        var chatContainer = document.getElementById('chatContainer');
+        var chatNameInput = document.getElementById('chatName');
+        var chatName = chatNameInput.value;
+
+        if (chatName.trim() !== '') {
+            // Set the chat button text to the entered chat name
+            var chatButton = document.createElement('button');
+            chatButton.textContent = chatName;
+            chatButton.onclick = function() {
+                openChatPage(chatName);
+            };
+
+            // Append the chat button to the body
+            document.body.appendChild(chatButton);
+
+            // Show the chat container
+            chatContainer.style.display = 'block';
+        } else {
+            alert('Please enter a chat name.');
+        }
+    }
+
+    function openChatPage(chatName) {
+        // Add logic to show the chat page for the selected chat name
+        var chatContainer = document.getElementById('chatContainer');
+        chatContainer.style.display = 'blo';
+        // You can add more specific logic, like loading chat history for this chatName, etc.
+    }
+
+    function sendMessage() {
+        var messageInput = document.getElementById('messageInput');
+        var chatMessages = document.getElementById('chatMessages');
+
+        var message = messageInput.value.trim();
+        if (message !== '') {
+            // Append the message to the chatMessages div
+            chatMessages.innerHTML += '<p><strong>You:</strong> ' + message + '</p>';
+            // Clear the input field
+            messageInput.value = '';
+            // Scroll to the bottom of the chatMessages div
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
+
+    function toggleEmojiPicker() {
+        var emojiPicker = document.getElementById('emojiPicker');
+        emojiPicker.style.display = emojiPicker.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // You can add more functions for handling emoji selection, storing messages, etc.
+</script>
+
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Button Generator</title>
+    <style>
+        .chatContainer {
+            display: none;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .chatHeader {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .chatMessages {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+        }
+
+        .messageInput {
+            width: 70%;
+            padding: 5px;
+        }
+
+        .sendButton {
+            width: 20%;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .emojiButton {
+            cursor: pointer;
+        }
+
+        .emojiPicker {
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+
+<label for="buttonName">Enter Button Name:</label>
+
+<input type="text" id="buttonName" placeholder="Type button name here">
+
+<label for="chatName">Enter Chat Name:</label>
+
+<input type="text" id="chatName" placeholder="Type chat name here">
+
+<button onclick="generateChatButton()">Create Chat Button</button>
+
+<script>
+    function generateChatButton() {
+
+        var buttonNameInput = document.getElementById('buttonName');
+        var chatNameInput = document.getElementById('chatName');
+
+        var buttonName = buttonNameInput.value.trim();
+        var chatName = chatNameInput.value.trim();
+
+        if (buttonName !== '' && chatName !== '') {
+            // Create the chat container with a unique ID
+            var chatContainer = document.createElement('div');
+            var containerId = 'chatContainer_' + chatName.replace(/\s+/g, '_'); // Ensure a valid ID
+            chatContainer.id = containerId;
+            chatContainer.classList.add('chatContainer');
+
+            // Create the chat header with the chat name
+            var chatHeader = document.createElement('div');
+            chatHeader.classList.add('chatHeader');
+            chatHeader.textContent = chatName + ' ' + buttonName;
+            chatContainer.appendChild(chatHeader);
+
+            // Create the chat messages container
+            var chatMessages = document.createElement('div');
+            chatMessages.classList.add('chatMessages');
+            chatContainer.appendChild(chatMessages);
+
+            // Create the message input field
+            var messageInput = document.createElement('input');
+            messageInput.type = 'text';
+            messageInput.classList.add('messageInput');
+            messageInput.placeholder = 'Type your message...';
+            chatContainer.appendChild(messageInput);
+
+            // Create the send button
+            var sendButton = document.createElement('button');
+            sendButton.textContent = 'Send';
+            sendButton.classList.add('sendButton');
+            sendButton.onclick = function() {
+                sendMessage(chatContainer);
+            };
+            chatContainer.appendChild(sendButton);
+
+            // Create the emoji button
+            var emojiButton = document.createElement('button');
+            emojiButton.textContent = '😊';
+            emojiButton.classList.add('emojiButton');
+            emojiButton.onclick = function() {
+                toggleEmojiPicker(chatContainer);
+            };
+            chatContainer.appendChild(emojiButton);
+
+            // Create the emoji picker
+            var emojiPicker = document.createElement('div');
+            emojiPicker.classList.add('emojiPicker');
+            chatContainer.appendChild(emojiPicker);
+
+            // Append the chat container to the body
+            document.body.appendChild(chatContainer);
+
+            // Display the chat container
+            chatContainer.style.display = 'block';
+        } else {
+            alert('Please enter both a button name and a chat name.');
+        }
+    }
+
+    function sendMessage(chatContainer) {
+        var messageInput = chatContainer.querySelector('.messageInput');
+        var chatMessages = chatContainer.querySelector('.chatMessages');
+
+        var message = messageInput.value.trim();
+        if (message !== '') {
+            // Append the message to the chatMessages div
+            chatMessages.innerHTML += '<p><strong>You:</strong> ' + message + '</p>';
+            // Clear the input field
+            messageInput.value = '';
+            // Scroll to the bottom of the chatMessages div
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
+
+    function toggleEmojiPicker(chatContainer) {
+        var emojiPicker = chatContainer.querySelector('.emojiPicker');
+        emojiPicker.style.display = emojiPicker.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // You can add more functions for handling emoji selection, storing messages, etc.
+    
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<div class="offcanvas" id="mySidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+     <button><i class="fa-solid fa-house"></i>Home</button><br/><br/><br/>
+     <button><i class="fa-solid fa-user-graduate"></i>Dashboard</button><br/><br/><br/>
+     <button><i Class="fa-solid fa-chalkboard-user"></i>My Classes</button><br/><br/><br/>
+     <button><i class="fa-solid fa-calendar-days"></i>schedule</button><br/><br/><br/>
+     <button><i class="fa-solid fa-message"></i>messages</button><br/><br/><br/>
+     <button><i class="fa-solid fa-circle-user"></i>Profile</button><br/><br/><br/>
+     <button><i class="fa-solid fa-gear"></i>Settings</button><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+     <button><i class="fa-solid fa-right-from-bracket"></i>Log out</button>
+    </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+

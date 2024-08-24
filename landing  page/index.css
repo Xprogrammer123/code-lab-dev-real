@@ -1,0 +1,118 @@
+body{
+   background: url(https://media.istockphoto.com/id/1343719285/vector/dark-blue-de-focused-blurred-motion-abstract-background.jpg?s=612x612&w=0&k=20&c=ip4UNHVBrD6VaHg2rNf89hUOm_g7iS7gcayP9cudWtg=);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+img{
+border-top-left-radius: 5%;
+border-top-right-radius: 50%;
+border-bottom-left-radius: 50%;
+border-bottom-right-radius: 5%;
+}
+.dropdown{
+  width: 100px;
+
+}
+.dropbtn:nth-of-type(1) {
+  margin-left: -30%;
+}
+.dropbtn {
+  background-color: transparent;
+  color: black;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 20px;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+ width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ transition: 0.5s ease-in-out;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropbtn {
+ background-color: rgb(19, 19, 157);
+}
+.dro
+.start{
+  width: 160px;
+  height: 60px;
+}
+.star{
+    color: blue;
+    font-size: 30px;
+    display: inline-block;
+}
+main{
+    width: 70%;
+    margin-left: 15%;
+}
+.expertise{
+    width: 300px;
+    height:50px ;
+    border-radius: 30px; 
+    border:none;
+    margin-left: 35%;
+    margin-top: 10%;
+}
+.big-text{
+  font-size: 80px;
+}
+
+.pp{
+  display: inline;
+  margin-left: 15%;
+  margin-top: 50px;
+  color: white;
+}
+.trial-btn{
+  width: 160px;
+  height: 60px;
+  margin-left: 30%;
+}
+
+.play{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  margin-left: 7%;
+  border-color: grey;
+}
+
+span{
+  margin-left: 1%;
+  font-size: 20px;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classwork2</title>
+</head>
+<body>
+    
+
+<button>9a</button>
+
+
+<button class="button">9b</button>
+
+
+
+<button onclick="clickButton()">heads</button>
+
+<button onclick="clickButton2()">tails </button>
+
+<p class="text-report"></p>
+
+<input type="text" placeholder="print name" class="print-input" onkeydown="printInput(event)"> 
+
+<button onclick="printName()">Submit</button>
+<br><br>
+<button class="print-output">Your Name Is: </button>
+
+
+
+
+<!--exercise 10a -->
+<p class="butt-add"></p>
+<button class="but" onclick="clickBut()">Add to Cart</button>
+
+
+<!--exercise 10b -->
+<p class="batt-req"></p>
+<button class="request" onclick="clickBat()">Request Now</button>
+<button class="later" onclick="clickByu()">Schedule For Later</button>
+<p class="byu-sch"></p>
+
+
+<!--exercise 10d -->
+<button class="is-toggled" id="element" onclick="toggle()">Gaming</button>
+
+
+<!--exercise 10e-->
+<button class="button" id="elementt" onclick="toggled(this)">Gaming</button>
+<button class="button" id="elementt" onclick="toggled(this)">Music</button>
+<button class="button" id="elementt" onclick="toggled(this)">Tech</button>
+
+
+
+<!--personal project-->
+<button class="change-butn" onclick="changeBack()">light mode</button>
+
+<p class="text-change">changing body to dark mode</p>
+
+<script>
+//exercise 9a
+console.log(document.querySelector('button').innerHTML)
+
+
+
+//exercise 9b
+document.querySelector('button').innerHTML = `9b done!`
+
+
+
+//exercise 9c 
+let head = 'head' 
+let tail = 'tail'
+
+function clickButton() {
+document.querySelector('.text-report').innerHTML = `You choose: ${head}`
+}
+
+function clickButton2() {
+
+document.querySelector('.text-report').innerHTML = `You choose: ${tail}`
+}
+
+
+
+//exercise 9d
+function printName() {
+const inputElement = document.querySelector('.print-input') ;
+
+let output = inputElement.value
+
+document.querySelector('.print-output').innerHTML = `Your Name Is: ${output}`;
+ }
+
+
+//exercise 9e
+
+function printInput(event) {
+    if (event.key === 'Enter') {
+printName()
+    }
+}
+
+
+//exercise 9f
+//DONE IN EXERCISE 9E
+
+
+
+//exercise 9g
+//DONE IN JS DOM .HTML
+
+
+
+//exercise 9h
+
+
+//exercise 10a
+
+function clickBut() {
+document.querySelector('.butt-add').innerHTML = `Added!`
+
+
+}
+ 
+
+//exercise 10b
+function clickBat() {
+    document.querySelector('.batt-req').innerHTML = `Requested!`
+}
+function clickByu() {
+    document.querySelector('.byu-sch').innerHTML = `Scheduled!`
+}
+//exercise 10 d
+
+function toggle() {
+
+let element = document.getElementById('element')
+
+if (element.classList.contains('is-toggled')) {
+
+document.querySelector('.is-toggled') .style.backgroundColor = 'black';
+document.querySelector('.is-toggled') .style.color = 'white'
+}
+else{
+   alert('this class dosent exist');
+}
+
+}
+
+//exercise 10e
+function toggled(clickedButton) {
+
+let element = document.querySelectorAll('.button')
+element.forEach(button => {
+ if (button === clickedButton) {
+
+    if (!button.classList.contains('active')) {
+    button.classList.add('active')
+    }else{
+    button.classList.remove('active')
+ }
+ }else{
+    button.classList.remove('active')
+ }
+});
+
+}
+
+//personal exercise
+
+document.addEventListener('DOMContentLoaded', function() {
+
+const changeColor = localStorage.getItem('toggleChangeBack')
+
+if (changeColor === 'rgb(41, 40, 40)') {
+document.body.classList.add('activee')
+}
+});
+
+function changeBack () {
+let butn = document.querySelector('.change-butn')
+
+if (butn.classList.contains('change-butn') && document.body.classList.contains('activee')) {
+document.body.classList.remove('activee')
+document.querySelector('.change-butn') .innerHTML = 'light mode'
+document.querySelector('.change-butn') .style.backgroundColor = 'black'
+document.querySelector('.change-butn') .style.color = 'white'
+document.querySelector('.text-change') .innerHTML = 'changing body to dark mode'
+}
+else{
+document.body.classList.add('activee')
+document.querySelector('.change-butn') .innerHTML = 'dark mode'
+document.querySelector('.change-butn') .style.backgroundColor = 'white'
+document.querySelector('.change-butn') .style.color = 'black'
+document.querySelector('.text-change') .innerHTML = 'changing body to light mode'
+localStorage.setItem('toggleChangeBack');
+}
+}
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<style>
+    .but{
+    width: 25%;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgb(255,216,20);
+    border: none;
+    font-weight: 500;
+    font-size: 17px;
+    transition: .5s ease-in-out;
+    color: white;
+    }
+
+.but:hover{
+  border: 1px solid rgb(255,216,20);
+    color: rgb(255,216,20);
+    background-color: white;
+    transform: translateY(-3px); 
+}
+.request{
+    width:18%;
+    height: 45px;
+    border-radius: 10px;
+background-color: black;
+    border: none;
+    font-weight: 500;
+    font-size: 17px;
+    transition: .5s ease-in-out;
+    color: white;
+}
+.request:hover{
+    border: 1px solid black;
+    color: black;
+    background-color: rgb(241, 237, 237);
+    transform: translateY(-3px); 
+    font-weight: 700;
+}
+.later{
+    width:18%;
+    height: 45px;
+    border-radius: 10px;
+background-color: white;
+    border: none;
+    font-weight: 500;
+    font-size: 17px;
+    transition: .5s ease-in-out;
+    color: black
+}
+.later:hover{
+    border: px solid black;
+    color: white;
+    background-color: black;
+    transform: translateY(-3px); 
+
+}
+#element,#elementt{
+    padding: 10px;
+   font-weight: bold;
+   font-size: 15px;
+   border-radius: 5px;
+   border: none;
+   transition: .3s ease-in-out;
+}
+#element:hover,
+#elementt:hover{
+    background-color: black;
+    color: white;
+}
+.active{
+    background-color: black;
+    color:white ;
+}
+.activee{
+    background-color: rgb(41, 40, 40);
+    color: white;
+}
+.change-butn{
+  padding: 15px;
+    border-radius: 10px;
+background-color: black;
+    border: none;
+    font-weight: 500;
+    font-size: 17px;
+    transition: .5s ease-in-out;
+    color: white;
+}
+.change-butn:active,
+.change-butn:focus{
+    border: 1px solid black;
+    color: black;
+    background-color: rgb(241, 237, 237);
+    font-weight: 500;
+}
+</style>
+
+
+
+
+
+
+
+</body>
+</html>

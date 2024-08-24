@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Gradient with Icon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading"><span>My </span>Projects</h2>
+        <div class="container">
+          <div class="row" id="ProjectsContainer">
+            <div class="portfolio-box">
+              <a href="#" class="portfolio-img">
+                <div class="gradient"></div>
+                <i class="icon">&#9733;</i>
+                <img src="pray.jpg" alt="Project Image">
+              </a>
+            </div>
+            <div class="portfolio-box">
+              <a href="#" class="portfolio-img">
+                <div class="gradient"></div>
+                <i class="icon">&#9733;</i>
+                <img src="pray.jpg" alt="Project Image">
+              </a>
+            </div>
+            <div class="portfolio-box">
+              <a href="#" class="portfolio-img">
+                <div class="gradient"></div>
+                <i class="icon">&#9733;</i>
+                <img src="pray.jpg" alt="Project Image">
+              </a>
+            </div>
+            <div class="portfolio-box">
+              <a href="#" class="portfolio-img">
+                <div class="gradient"></div>
+                <i class="icon">&#9733;</i>
+                <img src="pray.jpg" alt="Project Image">
+              </a>
+            </div>
+            <div class="portfolio-box">
+              <a href="#" class="portfolio-img">
+                <div class="gradient"></div>
+                <i class="icon">&#9733;</i>
+                <img src="pray.jpg" alt="Project Image">
+              </a>
+            </div>
+            <div class="portfolio-box">
+              <a href="#" class="portfolio-img">
+                <div class="gradient"></div>
+                <i class="icon">&#9733;</i>
+                <img src="pray.jpg" alt="Project Image">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <style>
+.portfolio .container {
+  background: #e1352c39;
+  color: var(--text-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.portfolio .container .row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4.5rem;
+}
+
+.portfolio .container .portfolio-box {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.portfolio .container .portfolio-box .portfolio-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-box img {
+  width: 100%;
+  height: auto;
+  border: 4px solid var(--main-color);
+  border-radius: 10px;
+}
+
+.gradient {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #ff7e5f, #feb47b);
+  transition: bottom 0.5s ease-in-out;
+}
+
+.portfolio-box:hover .gradient {
+  bottom: 0;
+}
+
+.icon {
+  position: absolute;
+  font-size: 48px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.portfolio-box:hover .icon {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio .container {
+    margin: 0;
+    padding: 0;
+  }
+
+  .portfolio .container .row {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem;
+    padding: 2rem 0.2rem;
+  }
+
+  .portfolio .container {
+    margin-top: 5px;
+    width: 100%;
+  }
+  
+  .icon {
+    font-size: 36px;
+  }
+}
+
+    </style>
+</body>
+</html>
